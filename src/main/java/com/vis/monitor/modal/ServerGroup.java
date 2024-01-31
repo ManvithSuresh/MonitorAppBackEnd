@@ -44,18 +44,18 @@ import javax.persistence.JoinColumn;
 	    private String groupName;
 	
 	  
-	    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	//     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	//     @JoinColumn(name = "server_group_id")
+	//     @Fetch(FetchMode.SUBSELECT)
+	//     private List<GroupingPorts> services;
+	// }
+//	    
+	    @ElementCollection
+	    @JoinTable(name = "server_group_services")
 	    @JoinColumn(name = "server_group_id")
 	    @Fetch(FetchMode.SUBSELECT)
-	    private List<GroupingPorts> services;
+	   private List<GroupingPorts> services;
 	}
-//	    
-//	    @ElementCollection
-//	    @JoinTable(name = "server_group_services")
-//	    @JoinColumn(name = "server_group_id")
-//	    @Fetch(FetchMode.SUBSELECT)
-//	   private List<GroupingPorts> services;
-//	}
 //	    @Embedded
 //	    @AttributeOverrides({
 //	            @AttributeOverride(name = "isActive", column = @Column(name = "services_isActive"))
