@@ -10,8 +10,8 @@ import javax.persistence.FetchType;
 
 import lombok.Data;
 
-//@Embeddable
-@Entity
+@Embeddable
+
 @Data
 public class GroupingPorts { 
 
